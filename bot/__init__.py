@@ -97,9 +97,16 @@ except KeyError as e:
     LOGGER.error("One or more env variables missing! Exiting now")
     exit(1)
 
-LOGGER.info("Generating USER_SESSION_STRING")
-with Client(':memory:', api_id=int(TELEGRAM_API), api_hash=TELEGRAM_HASH, bot_token=BOT_TOKEN) as app:
-    USER_SESSION_STRING = app.export_session_string()
+# Generate USER_SESSION_STRING, if not exists
+try:
+    if bool(os.environ['USER_SESSION_STRING']):
+        USER_SESSION_STRING = os.environ['USER_SESSION_STRING']
+        pass
+except KeyError:
+    LOGGER.info('Generating USER_SESSION_STRING...')
+    with Client(':memory:', api_id=int(TELEGRAM_API), api_hash=TELEGRAM_HASH, bot_token=BOT_TOKEN) as app:
+        USER_SESSION_STRING = app.export_session_string()
+        update_dat('config.env', 'USER_SESSION_STRING', USER_SESSION_STRING)
 
 #Generate Telegraph Token
 sname = ''.join(random.SystemRandom().choices(string.ascii_letters, k=8))
