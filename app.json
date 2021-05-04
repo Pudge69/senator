@@ -58,6 +58,10 @@
         "description": "Refer to https://github.com/maple3142/GDIndex/ The URL should not have any trailing '/'.",
         "required": false
       },
+      "USER_SESSION_STRING": {
+        "description": "Add user session string",
+        "required": false
+      },
       "TELEGRAM_API": {
         "description": "This is to authenticate to your telegram account for downloading Telegram files. You can get this from https://my.telegram.org.",
         "required": true
