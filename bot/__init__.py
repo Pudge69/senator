@@ -99,8 +99,8 @@ except KeyError as e:
 
 # Generate USER_SESSION_STRING, if not exists
 try:
-    if bool(os.environ['USER_SESSION_STRING']):
-        USER_SESSION_STRING = os.environ['USER_SESSION_STRING']
+    if bool(getConfig('USER_SESSION_STRING')):
+        USER_SESSION_STRING = getConfig('USER_SESSION_STRING') 
         pass
 except KeyError:
     LOGGER.info("Generating USER_SESSION_STRING")
