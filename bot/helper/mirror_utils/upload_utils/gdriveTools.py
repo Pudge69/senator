@@ -537,7 +537,7 @@ class GoogleDriveHelper:
             Telegraph(access_token=telegraph_token).edit_page(path = self.path[prev_page],
                                  title = 'SenaTorBot Search',
                                  author_name='SenaTorBot',
-                                 author_url='https://github.com/breakdowns/slam-mirrorbot',
+                                 author_url='https://t.me/JasonWayneTodd',
                                  html_content=content)
         return
 
@@ -622,7 +622,7 @@ class GoogleDriveHelper:
                 self.path.append(Telegraph(access_token=telegraph_token).create_page(
                                                         title = 'SenaTorBot Search',
                                                         author_name='SenaTorBot',
-                                                        author_url='https://github.com/breakdowns/slam-mirrorbot',
+                                                        author_url='https://t.me/JasonWayneTodd',
                                                         html_content=content
                                                         )['path'])
 
