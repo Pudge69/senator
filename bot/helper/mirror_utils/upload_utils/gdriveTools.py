@@ -117,7 +117,7 @@ class GoogleDriveHelper:
                                      resumable=False)
         file_metadata = {
             'name': file_name,
-            'description': 'Uploaded using SenTorBot',
+            'description': 'Uploaded using SenaTorBot',
             'mimeType': mime_type,
         }
         if parent_id is not None:
@@ -171,7 +171,7 @@ class GoogleDriveHelper:
         # File body description
         file_metadata = {
             'name': file_name,
-            'description': 'Uploaded by SenTorBot',
+            'description': 'Uploaded by SenaTorBot',
             'mimeType': mime_type,
         }
         try:
@@ -557,8 +557,8 @@ class GoogleDriveHelper:
                     content += f'<b> | <a href="https://telegra.ph/{self.path[nxt_page]}">Next</a></b>'
                     nxt_page += 1
             Telegraph(access_token=telegraph_token).edit_page(path = self.path[prev_page],
-                                 title = 'SenTorBot Search',
-                                 author_name='SenTorBot',
+                                 title = 'SenaTorBot Search',
+                                 author_name='SenaTorBot',
                                  author_url='https://t.me/JasonWayneTodd',
                                  html_content=content)
         return
@@ -642,8 +642,8 @@ class GoogleDriveHelper:
 
             for content in self.telegraph_content :
                 self.path.append(Telegraph(access_token=telegraph_token).create_page(
-                                                        title = 'SenTorBot Search',
-                                                        author_name='SenTorBot',
+                                                        title = 'SenaTorBot Search',
+                                                        author_name='SenaTorBot',
                                                         author_url='https://t.me/JasonWayneTodd',
                                                         html_content=content
                                                         )['path'])
